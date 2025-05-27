@@ -1,0 +1,49 @@
+header{
+    display: flex;
+    background-color: #396A57;
+    color: white;
+    width: 100%
+    
+}
+.titulo {
+    display: flex;
+    align-items: center;
+    
+}
+.logo{
+    width: 50px;
+    padding: 20px;
+}
+body{
+    margin: 0px 0px;
+    font-family: italic;
+}
+footer{
+    text-align: center;
+    background-color: #396A57;
+    color: white;
+    padding:30px; 
+}
+.piePagina{
+    margin: 0px 0px;
+}
+#Container{
+    background-color: white;
+    margin: 50px 50px;
+    padding: 0 30px 30px 30px;
+    
+}
+.Nosotros-blog{
+    background-color: #ccccccc7;
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+.Nosotros-blog iframe{
+   margin: 20px 80px;
+}
+section{
+   margin: 50px;
+   padding: 20px;
+   
+    
+}

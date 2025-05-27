@@ -1,0 +1,145 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 21 abr 2025, 02:10:29
+    Author     : LENOVO
+*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: #faf4f3;
+    padding: 20px;
+    gap: 20px;
+}
+
+.banner-migraciones {
+    width: 350px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    background-color: #faf4f3;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.contenido {
+    padding: 20px;
+}
+
+.formulario {
+    margin: 20px 0;
+}
+
+.formulario input, .formulario select, .formulario textarea {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 300px;
+}
+
+.formulario button {
+    padding: 8px 15px;
+    background-color: #eb2a0a;
+    color: white;
+    border: none;
+}
+
+.video-info {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.video-info video {
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.video-info video {
+    flex: 1;
+    max-width: 350px;
+}
+
+.info-texto {
+    flex: 2;
+    max-width: 100%;
+    text-align: justify;
+}
+
+.info-texto h3 {
+    margin-top: 0;
+    color: #eb2a0a;
+}
+
+.info-texto p {
+    margin-bottom: 10px;
+}
+
+.tabla-contacto {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.tabla-contacto th, .tabla-contacto td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.galeria {
+    padding: 2rem;
+    background-color: #fbe9e7;
+}
+
+.galeria .ubicacion {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.barra-lateral {
+    background-color: #f2f2f2;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.pie-pagina {
+    background-color: #302f2f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.redes a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+

@@ -9,117 +9,164 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <meta charset="UTF-8">
         <meta name="description" content="Página informativa sobre Migraciones en Perú">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Migraciones</title>
+        <title>Migraciones Del Perú</title>
         <link rel="stylesheet" href="css/EstilosMigraciones.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
-    
+
     <body>
         <header class="encabezado">
             <a href="Migraciones.html">
-              <img src="imagenes/banner.png" alt="Migraciones Perú" class="banner-migraciones">
+                <img src="imagenes/banner.png" alt="Migraciones Perú" class="banner-migraciones">
             </a>
             <nav class="menu">
                 <ul>
-                  <li><a href="#">Inicio</a></li> 
-                  <li><a href="ministerios.html">Ministerios</a></li>
-                  <li><a href="municipalidades.html">Municipalidades</a></li>
+                    <li><a href="#informacion">Información</a></li>
+                    <li><a href="#multimedia">Multimedia</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#"id="calculadoraBtn">Calculadora de Multas</a></li>
                 </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
             </nav>
         </header>
 
-    <main class="contenido">
-        <h2>Servicios de Migraciones</h2>
-        <p>Bienvenido al portal informativo de la Superintendencia Nacional de Migraciones del Perú. Aquí encontrarás información sobre trámites migratorios, pasaportes, y más.</p>
+        <main class="contenido">
+            <section id="animacion">
+                <div class="banner-animado">
+                    <p>Migraciones Perú • Información actualizada • Trámites rápidos y seguros</p>
+                </div>
+            </section>
 
-        <h3>Formulario de Consulta</h3>
-        <form class="formulario">
-            <label>Nombre Completo:</label>
-            <input type="text" placeholder="Ingresa tu nombre">
-            <label>Correo Electrónico:</label>
-            <input type="email" placeholder="correo@ejemplo.com">
-            <label>Tipo de consulta:</label>
-            <select>
-                <option>Pasaporte</option>
-                <option>Visa</option>
-                <option>Permisos</option>
-            </select>
-            <label>Mensaje:</label>
-            <textarea rows="4"></textarea>
-            <button type="submit">Enviar</button>
-        </form>
+            <p>Bienvenido al portal informativo de la Superintendencia Nacional de Migraciones del Perú. Aquí encontrarás información sobre trámites migratorios, pasaportes, y más.</p>
 
-        <div class="video-info">
-            <video controls width="300", height="390">
-                <source src="videos/tutorial.mp4" type="video/mp4">
-            </video>
-            <div class="info-texto">
-                <h3>Información Institucional</h3>
-                <p><strong>¿Qué hacemos?</strong><br>
-                Somos el organismo técnico especializado adscrito al Ministerio del Interior responsable del control migratorio de ciudadanos nacionales y extranjeros, la emisión de documentos de viaje a ciudadanos nacionales y extranjeros, y el otorgamiento de la nacionalidad peruana. Contribuyendo a la seguridad y el desarrollo del país.</p>
-                
-                <p><strong>Misión:</strong><br>
-                Conducir la política migratoria interna a favor de las personas nacionales y extranjeras de manera eficiente, oportuna, transparente, segura, íntegra e innovadora, respetuosa de los derechos humanos en armonía con la seguridad nacional, orden interno y público.</p>
-                
-                <p><strong>Valores:</strong><br>
-                En la Superintendencia Nacional de Migraciones consideramos para el desarrollo de nuestras funciones los siguientes valores: honestidad, responsabilidad, solidaridad, transparencia, justicia, reciprocidad, orden y disciplina, entre otros.</p>
-            
-                <p><strong>Enfoques de intervención:</strong><br>
-                    Desarrollamos nuestras actividades considerando los siguientes enfoques transversales: transparencia, derechos humanos, competitividad, calidad, innovación, equidad, trabajo en equipo y gestión por resultados.</p>
-          
-                <p><strong>Contamos con:</strong><br>
-                18 jefaturas zonales.
-                26 agencias de atención al ciudadano (AAC).
-                3 centros binacionales de atención fronteriza (CEBAF).
-                34 Puestos de Control Migratorio (PCM).
-                21 Puestos de Control Fronterizo (PCF).
-                8 Puestos de Verificación Migratorio (PVM).</p>
+            <section id="informacion">
+                <h2>¿Qué es la Superintendencia Nacional de Migraciones?</h2>
+                <p>La Superintendencia Nacional de Migraciones es un organismo técnico especializado que forma parte del Ministerio del Interior del Perú. Se encarga de gestionar el ingreso y salida de personas del país, así como de regular su situación migratoria dentro del territorio nacional.</p>
+
+                <div class="video-info">
+                    <video controls width="300", height="390">
+                        <source src="videos/migraciones-info.mp4" type="video/mp4">
+                    </video>
+                    <div class="info-texto">
+                        <h3>Información Institucional</h3>
+                        <p><strong>¿Qué hacemos?</strong><br>
+                            Somos el organismo técnico especializado adscrito al Ministerio del Interior responsable del control migratorio de ciudadanos nacionales y extranjeros, la emisión de documentos de viaje a ciudadanos nacionales y extranjeros, y el otorgamiento de la nacionalidad peruana. Contribuyendo a la seguridad y el desarrollo del país.</p>
+
+                        <p><strong>Misión:</strong><br>
+                            Conducir la política migratoria interna a favor de las personas nacionales y extranjeras de manera eficiente, oportuna, transparente, segura, íntegra e innovadora, respetuosa de los derechos humanos en armonía con la seguridad nacional, orden interno y público.</p>
+
+                        <p><strong>Valores:</strong><br>
+                            En la Superintendencia Nacional de Migraciones consideramos para el desarrollo de nuestras funciones los siguientes valores: honestidad, responsabilidad, solidaridad, transparencia, justicia, reciprocidad, orden y disciplina, entre otros.</p>
+
+                        <p><strong>Enfoques de intervención:</strong><br>
+                            Desarrollamos nuestras actividades considerando los siguientes enfoques transversales: transparencia, derechos humanos, competitividad, calidad, innovación, equidad, trabajo en equipo y gestión por resultados.</p>
+
+                        <p><strong>Contamos con:</strong><br>
+                            18 jefaturas zonales.
+                            26 agencias de atención al ciudadano (AAC).
+                            3 centros binacionales de atención fronteriza (CEBAF).
+                            34 Puestos de Control Migratorio (PCM).
+                            21 Puestos de Control Fronterizo (PCF).
+                            8 Puestos de Verificación Migratorio (PVM).</p>
+                    </div>
+                </div>
+
+                <h3>Información de Contacto</h3>
+                <table class="tabla-contacto">
+                    <tr>
+                        <th>Oficina</th>
+                        <th>Dirección</th>
+                        <th>Teléfono</th>
+                    </tr>
+                    <tr>
+                        <td>Arequipa</td>
+                        <td>José Luis Bustamante y Ribero 04002</td>
+                        <td>(054) 421759</td>
+                    </tr>
+                    <tr>
+                        <td>Lima</td>
+                        <td>Avenida España 734</td>
+                        <td>(052) 001000</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="gal-ubicacion">
+                <h3>Ubicación</h3>
+                <div class="ubicacion">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d15607.143492214822!2d-77.0446853!3d-12.0582488!3m2!1i1024!2i768!4f13.1!2m1!1smigraciones%20lima!5e0!3m2!1ses!2spe!4v1745226697261!5m2!1ses!2spe"  width="560" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>    
+
+            <marquee>Superintendencia Nacional de Migraciones - Atención al ciudadano</marquee>
+
+            <section id="multimedia">
+                <h2>Galería Informativa</h2>
+                <div class="galeria">
+                    <img src="imagenes/migraciones.jpg" alt="Oficinas de Migraciones">
+                    <img src="imagenes/migraciones-tramites.jpg" alt="Trámites">
+                    <video controls>
+                        <source src="videos/migraciones-tuto.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
+            </section>
+
+            <section id="contacto">
+                <h2>¿Deseas contactarnos?</h2>
+                <p>Puedes llenar el formulario haciendo clic en el botón a continuación:</p>
+                <button id="formularioBtn">Ir al formulario</button>
+            </section>
+        </main>
+
+        <aside class="barra-lateral">
+            <div class="widget">
+                <h3>Trámites Populares</h3>
+                <ul id="tramitesLista">
+                </ul>
+            </div>
+            <div class="widget">
+                <h3>Noticias Recientes</h3>
+                <div id="noticiasContainer">
+                </div>
+            </div>
+        </aside>
+
+        <footer class="pie-pagina">
+            <p>&copy; 2025 Migraciones Perú - Todos los derechos reservados.</p>
+            <div class="redes">
+                <a href="https://www.facebook.com/MigracionesDePeru"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/migraciones.pe"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@migracionesperu1927"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+
+        <div id="calculadoraModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Calculadora de Multas Migratorias</h2>
+                <form id="calculadoraForm">
+                    <div class="campo">
+                        <label for="tipoInfraccion">Tipo de Infracción:</label>
+                        <select id="tipoInfraccion" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="sobreestadia">Sobrestadía</option>
+                            <option value="documentacion">Documentación vencida</option>
+                            <option value="trabajo">Trabajo sin permiso</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="diasRetraso">Días de retraso:</label>
+                        <input type="number" id="diasRetraso" min="1" required>
+                    </div>
+                    <button type="submit">Calcular Multa</button>
+                </form>
+                <div id="resultadoCalculadora"></div>
             </div>
         </div>
 
-        <h3>Información de Contacto</h3>
-        <table class="tabla-contacto">
-            <tr>
-                <th>Oficina</th>
-                <th>Dirección</th>
-                <th>Teléfono</th>
-            </tr>
-            <tr>
-                <td>Arequipa</td>
-                <td>José Luis Bustamante y Ribero 04002</td>
-                <td>(054) 421759</td>
-            </tr>
-            <tr>
-                <td>Lima</td>
-                <td>Avenida España 734</td>
-                <td>(052) 001000</td>
-            </tr>
-        </table>
-
-        <section class="galeria">
-            <h3>Ubicación</h3>
-            <div class="ubicacion">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d15607.143492214822!2d-77.0446853!3d-12.0582488!3m2!1i1024!2i768!4f13.1!2m1!1smigraciones%20lima!5e0!3m2!1ses!2spe!4v1745226697261!5m2!1ses!2spe"  width="560" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </section>    
-                
-        <marquee>Superintendencia Nacional de Migraciones - Atención al ciudadano</marquee>
-    </main>
-
-    <aside class="barra-lateral">
-        <h4>Noticias Destacadas</h4>
-        <ul>
-            <li>Nuevo proceso para pasaportes electrónicos</li>
-            <li>Actualización de requisitos migratorios</li>
-        </ul>
-    </aside>
-
-    <footer class="pie-pagina">
-        <p>&copy; 2025 Migraciones Perú - Todos los derechos reservados.</p>
-        <div class="redes">
-            <a href="https://www.facebook.com/MigracionesDePeru">Facebook</a>
-            <a href="https://www.instagram.com/migraciones.pe">Instagram</a>
-            <a href="https://www.youtube.com/@migracionesperu1927">YouTube</a>
-        </div>
-    </footer>
+        <script src="js/JavasMigraciones.js"></script>
     </body>
 </html>

@@ -5,69 +5,138 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 -->
 <html>
     <head>
-        <title>Municipalidad Provincial de Arequipa</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Municipalidad Provincial de Arequipa</title>
+        <link rel="icon" href="imagenes/icono.png">
         <link rel="stylesheet" href="css/EstilosMunicipalidad.css">
+        <link rel="stylesheet" href="css/principal-municipalidad.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap">
     </head>
     <body>
         <header>
-            <img src="imagenes/logo-aqp.png" alt="Logo Municipalidad de Arequipa" class="logo">
-            <h1>Municipalidad Provincial de Arequipa</h1>
+            <div class="header-container">
+                <img src="imagenes/logo-aqp.png" alt="Logo Municipalidad de Arequipa" class="logo">
+                <h1>Municipalidad Provincial de Arequipa</h1>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tramites-municipalidad.html">Trámites y Noticias</a></li>
+                </ul>
+            </nav>
         </header>
 
-        <section class="banner">
-            <img src="imagenes/banner-aqp.jpg" alt="Banner de Arequipa">
-        </section>
+        <main>
+            <section class="banner">
+                <div class="carousel">
+                    <button class="prev">&#10094;</button>
+                    <div class="carousel-images">
+                        <img src="imagenes/banner-aqp.jpg" alt="Banner 1">
+                        <img src="imagenes/banner-aqp-2.jpg" alt="Banner 2">
+                        <img src="imagenes/banner-aqp-3.jpg" alt="Banner 3">
+                    </div>
+                    <button class="next">&#10095;</button>
+                </div>
+            </section>
 
-        <section class="video">
-            <h2>Conoce Arequipa</h2>
-            <video controls>
-                <source src="videos/arequipa.mp4" type="video/mp4">
-                Tu navegador no soporta videos HTML5.
-            </video>
-        </section>
+            <div class="container">
+                <section class="video">
+                    <h2>Conoce Arequipa</h2>
+                    <video controls>
+                        <source src="videos/arequipa.mp4" type="video/mp4">
+                        Tu navegador no soporta videos HTML5.
+                    </video>
+                </section>
 
-        <section class="info">
-            <p>
-                AREQUIPA es una ciudad y un área metropolitana, capital de la provincia homónima y del departamento de Arequipa, es considerada la «Capital Jurídica del Perú» y la «Sede Oficial del Tribunal Constitucional» desde 1979. Actualmente, según el Censo 2017 realizado por el instituto Nacional de Estadística e Informática (INEI)  Arequipa tendría 1 millón 382 mil 730 habitantes; de los cuales, el 24,0% son menores de 15 años , 64,3% tiene de 15 a 59 años y el 11,7% son adultos mayores (60 a mas años de edad) está conformada por 29 distritos. El área metropolitana de Arequipa se extiende sobre una superficie de 2900 km2.  Es considerada un importante Centro Industrial y Comercial del Perú, dentro de su actividad industrial, destaca la producción textil de lana de camélidos con calidad de exportación.
-            </p>
-            <p>
-                La ciudad fue fundada el 15 de agosto de 1540, bajo la denominación de «Villa Hermosa de Nuestra Señora de la Asunta» en nombre del marqués don Francisco Pizarro y el 22 de setiembre de 1541 el monarca Carlos V en Cédula Real ordena que se le llamé «Ciudad de Arequipa». En el periodo virreinal adquirió desde ya importancia, misma que fue reconocida por la Corona Española a través de los títulos que se le conceden tales como «Muy Noble y Muy Leal» y el de «Fidelísima». En la historia republicana del Perú el protagonismo de la ciudad de Arequipa fue gravitante, pues llegó a ser declarada “Capital de la República” durante el gobierno de Lizardo Montero. Su casco histórico se extiende sobre un superficie de 332 hectareas y fue declarado por la Unesco como «Patrimonio Cultural de la Humanidad», por sus diversos espacios escénicos y culturales es una Ciudad Receptora de Turismo Nacional e Internacional.
-            </p>
-            <h2>MISIÓN INSTITUCIONAL</h2>
-            <p>
-                Promover la adecuada prestación de servicios públicos y el desarrollo sostenible y armónico para la ciudadania arequipeña con calidad, transparencia y ética.
-            </p>
-            <h2>VISIÓN INSTITUCIONAL</h2>
-            <p>
-                Arequipa, Patrimonio Cultural de la Humanidad, consolidada como nodo estratégico de desarrollo de la zona centro occidental de Sudamérica.
-            </p>
-        </section>
+                <section class="info">
+                    <p>
+                        AREQUIPA es una ciudad y un área metropolitana, capital de la provincia homónima y del departamento de Arequipa, es considerada la «Capital Jurídica del Perú» y la «Sede Oficial del Tribunal Constitucional» desde 1979.
+                    </p>
+                    <button id="infoBtn" class="btn-more">Ver más información</button>
+                    <div id="moreInfo" class="hidden">
+                        <p>
+                            Actualmente, según el Censo 2017 realizado por el instituto Nacional de Estadística e Informática (INEI)  Arequipa tendría 1 millón 382 mil 730 habitantes; de los cuales, el 24,0% son menores de 15 años , 64,3% tiene de 15 a 59 años y el 11,7% son adultos mayores (60 a mas años de edad) está conformada por 29 distritos. El área metropolitana de Arequipa se extiende sobre una superficie de 2900 km2.  Es considerada un importante Centro Industrial y Comercial del Perú, dentro de su actividad industrial, destaca la producción textil de lana de camélidos con calidad de exportación.
+                        </p>
+                        <p>
+                            La ciudad fue fundada el 15 de agosto de 1540, bajo la denominación de «Villa Hermosa de Nuestra Señora de la Asunta» en nombre del marqués don Francisco Pizarro y el 22 de setiembre de 1541 el monarca Carlos V en Cédula Real ordena que se le llamé «Ciudad de Arequipa». En el periodo virreinal adquirió desde ya importancia, misma que fue reconocida por la Corona Española a través de los títulos que se le conceden tales como «Muy Noble y Muy Leal» y el de «Fidelísima». En la historia republicana del Perú el protagonismo de la ciudad de Arequipa fue gravitante, pues llegó a ser declarada "Capital de la República" durante el gobierno de Lizardo Montero. Su casco histórico se extiende sobre un superficie de 332 hectareas y fue declarado por la Unesco como «Patrimonio Cultural de la Humanidad», por sus diversos espacios escénicos y culturales es una Ciudad Receptora de Turismo Nacional e Internacional.
+                        </p>
+                    </div>
 
-        <section class="galeria">
-            <h2>Arequipa en imágenes</h2>
-            <div class="imagenes">
-                <img src="imagenes/plaza-de-armas.jpg" alt="Plaza de Armas">
-                <img src="imagenes/misti.jpg" alt="Volcán Misti">
-                <img src="imagenes/municipalidad.jpg" alt="Sede Municipal">
+                    <h2>MISIÓN INSTITUCIONAL</h2>
+                    <p>
+                        Promover la adecuada prestación de servicios públicos y el desarrollo sostenible y armónico para la ciudadania arequipeña con calidad, transparencia y ética.
+                    </p>
+                    <h2>VISIÓN INSTITUCIONAL</h2>
+                    <p>
+                        Arequipa, Patrimonio Cultural de la Humanidad, consolidada como nodo estratégico de desarrollo de la zona centro occidental de Sudamérica.
+                    </p>
+                </section>
+
+                <section class="galeria">
+                    <h2>Arequipa en imágenes</h2>
+                    <div class="imagenes">
+                        <img src="imagenes/plaza-de-armas.jpg" alt="Plaza de Armas">
+                        <img src="imagenes/misti.jpg" alt="Volcán Misti">
+                        <img src="imagenes/municipalidad.jpg" alt="Sede Municipal">
+                    </div>
+                    <button id="openModalBtn" class="btn-more">Ver más fotos</button>
+                </section>
+
+                <section class="galeria">
+                    <h3>Ubicación</h3>
+                    <div class="ubicacion">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.626815982757!2d-71.5316086248572!3d-16.392961984334388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a526e8f60a3%3A0xffd054bcea14cd85!2sMunicipalidad%20Provincial%20de%20Arequipa!5e0!3m2!1ses!2spe!4v1745376149460!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </section>
             </div>
-        </section>
 
-        <section class="galeria">
-            <h3>Ubicación</h3>
-            <div class="ubicacion">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.626815982757!2d-71.5316086248572!3d-16.392961984334388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a526e8f60a3%3A0xffd054bcea14cd85!2sMunicipalidad%20Provincial%20de%20Arequipa!5e0!3m2!1ses!2spe!4v1745376149460!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- Modal para la galería de fotos -->
+            <div id="galleryModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2>Galería de Arequipa</h2>
+                    <div class="modal-images" id="modalImages"></div>
+                    <div class="modal-controls">
+                        <button id="prevModal">Anterior</button>
+                        <button id="nextModal">Siguiente</button>
+                    </div>
+                </div>
             </div>
-        </section>
-        
+        </main>
+
         <footer>
-            <p>&copy; 2025 Municipalidad de Arequipa | Contacto: info@arequipa.gob.pe</p>
-            <div class="redes">
-                <a href="https://www.facebook.com/MuniArequipa/">Facebook</a>
-                <a href="https://www.instagram.com/muni.arequipa/">Instagram</a>
-                <a href="https://www.youtube.com/user/muniArequipa/">YouTube</a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Plaza de Armas s/n, Arequipa</p>
+                    <p><i class="fas fa-phone"></i> (054) 123456</p>
+                    <p><i class="fas fa-envelope"></i> info@arequipa.gob.pe</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horario de Atención</h3>
+                    <p>Lunes a Viernes: 8:00 am - 4:00 pm</p>
+                    <p>Sábados: 9:00 am - 1:00 pm</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="redes">
+                        <a href="https://www.facebook.com/MuniArequipa/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/muni.arequipa/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/user/muniArequipa/" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://twitter.com/MuniArequipa" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Municipalidad de Arequipa | Todos los derechos reservados</p>
             </div>
         </footer>
+
+        <script src="js/JavasMunicipalidad.js"></script>
+        <script src="js/principal-municipalidad.js"></script>
     </body>
 </html>

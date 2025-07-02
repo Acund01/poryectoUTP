@@ -7,58 +7,210 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Author     : LENOVO
 */
 body {
-    font-family: Verdana, sans-serif;
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f2f4f8;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.sidebar {
+    background-color: #0c1b33;
+    color: white;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.toggle-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 1.5rem;
+    text-align: center;
+    color: white;
+    background-color: #1a2d4a;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #2a3d5a;
+}
+
+.sidebar-header {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #2a3d5a;
+    margin-bottom: 1rem;
+}
+
+.sidebar-header img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sidebar-menu {
+    list-style: none;
     padding: 0;
-    background-color: #f0f8ff;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.sidebar-menu li {
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu li:hover {
+    background-color: #1a2d4a;
+}
+
+.sidebar-menu a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+.sidebar-menu i {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    width: 24px;
+    text-align: center;
+}
+
+.sidebar-menu span {
+    white-space: nowrap;
+}
+
+.sidebar.collapsed .sidebar-menu span {
+    display: none;
+}
+
+.sidebar.collapsed .sidebar-header h3 {
+    display: none;
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid #2a3d5a;
+    text-align: center;
+}
+
+.info-btn {
+    background-color: #f7472a;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.info-btn i {
+    margin-right: 0.5rem;
+}
+
+.sidebar.collapsed .info-btn span {
+    display: none;
+}
+
+.sidebar.collapsed .info-btn i {
+    margin-right: 0;
+    font-size: 1.2rem;
+}
+
+.info-btn:hover {
+    background-color: #e63927;
+}
+
+/* Contenido principal */
+.contenido {
+    margin-left: 250px;
+    padding: 2rem;
+    width: calc(100% - 250px);
+    background-color: #fff;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+.sidebar.collapsed ~ .contenido {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #777;
+}
+
+.close-btn:hover {
     color: #333;
 }
 
-.menu-ministerios {
-    background-color: #e9d7d4;
-    color: black;
-    padding: 10px;
+.intro {
+    margin-bottom: 2rem;
 }
 
-.menu-ministerios h3 {
-    text-align: center;
+.intro h1 {
+    color: #0c1b33;
+    font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
-.menu-ministerios ul {
-    list-style: none;
-    padding: 0;
-}
-
-.menu-ministerios a {
-    color: black;
-    text-decoration: none;
-    display: block;
-    padding: 8px;
-    border-bottom: 1px solid #000000;
-}
-
-.menu-ministerios a:hover {
-    background-color: #cd2104;
-}
-
-.imagen-logo {
-    width: 100%;
-    height: 200px;
-    margin-bottom: 20px;
-}
-
-.contenido-ministerios {
-    padding: 20px;
-}
-
-.contenido-ministerios header {
-    background-color: #faf4f3;
-    color: black;
-    padding: 15px;
-    text-align: center;
-}
-
-.galeria .imagene-ministerio {
+.galeria .imagen-ministerio {
     display: flex;
     gap: 1rem;
     justify-content: center;
@@ -80,9 +232,58 @@ blockquote {
     font-style: italic;
 }
 
-.pie-pagina {
-    background-color: #302f2f;
-    color: white;
+.intro p {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #444;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: #eef1f7;
+    padding: 1.5rem;
+    border-radius: 10px;
     text-align: center;
-    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    color: #0c1b33;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 1rem;
+    }
+
+    .sidebar.collapsed ul li a {
+        font-size: 0;
+    }
+
+    .sidebar.collapsed li {
+        text-align: center;
+    }
+
+    .sidebar.collapsed .toggle-btn {
+        text-align: center;
+    }
 }

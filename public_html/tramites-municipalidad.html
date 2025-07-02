@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trámites y Noticias - Municipalidad de Arequipa</title>
+        <link rel="icon" href="imagenes/icono.png">
+        <link rel="stylesheet" href="css/EstilosMunicipalidad.css">
+        <link rel="stylesheet" href="css/tramites-municipalidad.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap">
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <img src="imagenes/logo-aqp.png" alt="Logo Municipalidad de Arequipa" class="logo">
+                <h1>Municipalidad Provincial de Arequipa</h1>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tramites.html">Trámites y Noticias</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="container">
+                <section class="tramites-section">
+                    <h2>Trámites Municipales</h2>
+                    <div class="calculadora-tramites">
+                        <h3>Calculadora de Trámites</h3>
+                        <form id="tramiteForm">
+                            <label for="tramite">Seleccione trámite:</label>
+                            <select id="tramite" name="tramite">
+                                <option value="">-- Seleccione --</option>
+                                <option value="licencia">Licencia de Construcción</option>
+                                <option value="permiso">Permiso de Comercio</option>
+                                <option value="pago">Pago de Arbitrios</option>
+                                <option value="otros">Otros Trámites</option>
+                            </select>
+
+                            <label for="tipo">Tipo:</label>
+                            <select id="tipo" name="tipo" disabled>
+                                <option value="">-- Seleccione primero un trámite --</option>
+                            </select>
+
+                            <button type="button" id="calcularBtn" class="btn-calculate">Calcular Costo</button>
+                        </form>
+                        <div id="resultadoTramite" class="resultado"></div>
+                    </div>
+
+                    <div class="tramites-list" id="tramitesContainer">
+                    </div>
+                </section>
+
+                <section class="noticias-section">
+                    <h2>Últimas Noticias</h2>
+                    <div class="noticias-container" id="noticiasContainer">
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Plaza de Armas s/n, Arequipa</p>
+                    <p><i class="fas fa-phone"></i> (054) 123456</p>
+                    <p><i class="fas fa-envelope"></i> info@arequipa.gob.pe</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horario de Atención</h3>
+                    <p>Lunes a Viernes: 8:00 am - 4:00 pm</p>
+                    <p>Sábados: 9:00 am - 1:00 pm</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="redes">
+                        <a href="https://www.facebook.com/MuniArequipa/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/muni.arequipa/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/user/muniArequipa/" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://twitter.com/MuniArequipa" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Municipalidad de Arequipa | Todos los derechos reservados</p>
+            </div>
+        </footer>
+
+        <script src="js/JavasMunicipalidad.js"></script>
+        <script src="js/tramites-municipalidad.js"></script>
+    </body>
+</html>

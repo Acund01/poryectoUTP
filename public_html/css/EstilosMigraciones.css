@@ -7,25 +7,27 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Author     : LENOVO
 */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
+    color: #333;
 }
 
 .encabezado {
     display: flex;
     align-items: center;
-    justify-content: left;
-    background-color: #faf4f3;
+    justify-content: space-between;
+    background-color: #fff;
     padding: 20px;
-    gap: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
 }
 
 .banner-migraciones {
     width: 350px;
     height: auto;
     display: block;
-    margin: 0 auto;
 }
 
 .menu ul {
@@ -35,35 +37,53 @@ body {
     list-style: none;
     padding: 10px 0;
     margin: 0;
-    background-color: #faf4f3;
+    background-color: #fff;
 }
 
 .menu a {
     text-decoration: none;
-    color: #000;
+    color: #005bac;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #003366;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #005bac;
 }
 
 .contenido {
-    padding: 20px;
+    padding: 2rem;
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-.formulario {
-    margin: 20px 0;
+.banner-animado {
+    background-color: #fff;
+    color: black;
+    padding: 10px;
+    animation: deslizar 10s infinite linear;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 5px;
 }
 
-.formulario input, .formulario select, .formulario textarea {
-    display: block;
-    margin-bottom: 10px;
-    padding: 5px;
-    width: 300px;
-}
-
-.formulario button {
-    padding: 8px 15px;
-    background-color: #eb2a0a;
-    color: white;
-    border: none;
+@keyframes deslizar {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 .video-info {
@@ -75,14 +95,10 @@ body {
 }
 
 .video-info video {
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
-.video-info video {
     flex: 1;
     max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .info-texto {
@@ -93,7 +109,7 @@ body {
 
 .info-texto h3 {
     margin-top: 0;
-    color: #eb2a0a;
+    color: #005bac;
 }
 
 .info-texto p {
@@ -104,42 +120,246 @@ body {
     border-collapse: collapse;
     width: 100%;
     margin-top: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .tabla-contacto th, .tabla-contacto td {
-    border: 1px solid #ccc;
-    padding: 8px;
+    border: 1px solid #ddd;
+    padding: 12px;
     text-align: left;
 }
 
-.galeria {
-    padding: 2rem;
-    background-color: #fbe9e7;
+.tabla-contacto th {
+    background-color: #005bac;
+    color: white;
 }
 
-.galeria .ubicacion {
+.tabla-contacto tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tabla-contacto tr:hover {
+    background-color: #e6f2ff;
+}
+
+.gal-ubicacion {
+    padding: 2rem 0;
+    background-color: #fff;
+}
+
+.gal-ubicacion .ubicacion {
     display: flex;
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.barra-lateral {
-    background-color: #f2f2f2;
-    padding: 15px;
-    margin: 20px 0;
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.galeria img, .galeria video {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.galeria img:hover, .galeria video:hover {
+    transform: scale(1.03);
+}
+
+button {
+    background-color: #005bac;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+    background-color: #004080;
+    transform: translateY(-2px);
 }
 
 .pie-pagina {
     background-color: #302f2f;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    margin-top: 30px;
 }
 
 .redes a {
     color: white;
-    margin: 0 10px;
+    margin: 0 15px;
     text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s;
 }
 
+.redes a:hover {
+    color: #4da6ff;
+}
+
+.barra-lateral {
+    width: 300px;
+    padding: 20px;
+    background-color: #baf7e0;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    position: fixed;
+    right: 0;
+    top: 100px;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.widget {
+    margin-bottom: 30px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.widget h3 {
+    color: #005bac;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.widget li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.widget li:last-child {
+    border-bottom: none;
+}
+
+.widget a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.widget a:hover {
+    color: #005bac;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.close:hover {
+    color: #333;
+}
+
+#resultadoCalculadora {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .barra-lateral {
+        position: static;
+        width: 100%;
+        margin-top: 30px;
+    }
+    
+    .contenido {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        z-index: 100;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    
+    .menu ul.show {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .video-info {
+        flex-direction: column;
+    }
+    
+    .video-info video {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .encabezado {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .banner-migraciones {
+        margin-bottom: 15px;
+    }
+    
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+}

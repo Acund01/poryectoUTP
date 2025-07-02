@@ -1,0 +1,139 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 1 jul 2025, 23:54:48
+    Author     : LENOVO
+*/
+.contacto-intro {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.contacto-intro p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.contacto-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contacto-formulario, .contacto-info {
+    flex: 1;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contacto-formulario h2, .contacto-info h2 {
+    margin-top: 0;
+    color: #0c1b33;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-enviar {
+    background-color: #f7472a;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #e63927;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.info-item i {
+    font-size: 1.2rem;
+    color: #f7472a;
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+}
+
+.info-item p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.info-item strong {
+    color: #333;
+}
+
+.mapa {
+    margin-top: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-aceptar {
+    background-color: #f7472a;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-aceptar:hover {
+    background-color: #e63927;
+}
+
+@media (max-width: 768px) {
+    .contacto-container {
+        flex-direction: column;
+    }
+    
+    .contacto-formulario, .contacto-info {
+        width: 100%;
+    }
+}

@@ -1,0 +1,153 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 2 jul 2025, 03:11:32
+    Author     : LENOVO
+*/
+.tramites-section {
+    padding: 3rem 0;
+}
+
+.calculadora-tramites {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.calculadora-tramites h2, 
+.calculadora-tramites h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#tramiteForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+#tramiteForm label {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+#tramiteForm select {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-family: var(--font-main);
+}
+
+.btn-calculate {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.btn-calculate:hover {
+    background-color: #9a3434;
+}
+
+.resultado {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.tramites-list {
+    margin-top: 3rem;
+}
+
+.tramite-item {
+    background-color: #f9f9f9;
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+}
+
+.tramite-title {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.tramite-desc {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/* Sección Noticias */
+.noticias-section {
+    padding: 3rem 0;
+    background-color: #f5f5f5;
+    margin-top: 2rem;
+    border-radius: 10px;
+}
+
+.noticias-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.noticia-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.noticia-card:hover {
+    transform: translateY(-5px);
+}
+
+.noticia-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.noticia-content {
+    padding: 1rem;
+}
+
+.noticia-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.noticia-date {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.noticia-desc {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .noticias-container {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Ministerios del Perú</title>
+        <link rel="icon" href="imagenes/icono.png">
+        <link rel="stylesheet" href="css/EstilosMinisterios.css">
+        <link rel="stylesheet" href="css/lista-ministerios.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <div class="sidebar" id="sidebar">
+            <div class="toggle-btn" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="sidebar-header">
+                <img src="imagenes/escudo-del-peru.png" alt="Escudo del Perú" class="escudo-peru">
+                <h3>Gobierno del Perú</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="Ministerios.html"><i class="fas fa-home"></i><span>Inicio</span></a></li>
+                <li><a href="lista-ministerios.html" class="active"><i class="fas fa-landmark"></i><span>Ministerios</span></a></li>
+                <li><a href="contacto-ministerios.html"><i class="fas fa-envelope"></i><span>Contacto</span></a></li>
+                <li><a href="busqueda-ministerios.html"><i class="fas fa-search"></i><span>Búsqueda</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <button onclick="mostrarInfo()" class="info-btn"><i class="fas fa-info-circle"></i> Información</button>
+            </div>
+        </div>
+
+        <div class="contenido" id="contenido">
+            <h1>Lista Completa de Ministerios</h1>
+
+            <div class="filtros">
+                <div class="grupo-filtros">
+                    <label for="filtro-letra">Filtrar por letra:</label>
+                    <select id="filtro-letra" onchange="filtrarPorLetra()">
+                        <option value="todas">Todas</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="M">M</option>
+                        <option value="P">P</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                        <option value="T">T</option>
+                        <option value="V">V</option>
+                    </select>
+                </div>
+
+                <div class="grupo-filtros">
+                    <label for="orden">Ordenar por:</label>
+                    <select id="orden" onchange="ordenarMinisterios()">
+                        <option value="nombre-asc">Nombre (A-Z)</option>
+                        <option value="nombre-desc">Nombre (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="lista-ministerios" class="lista-ministerios">
+            </div>
+
+            <div class="estadisticas">
+                <h3>Estadísticas</h3>
+                <div class="estadisticas-grid">
+                    <div class="estadistica-item">
+                        <i class="fas fa-building"></i>
+                        <span id="total-ministerios">0</span>
+                        <p>Ministerios</p>
+                    </div>
+                    <div class="estadistica-item">
+                        <i class="fas fa-font"></i>
+                        <span id="letra-mas-comun">-</span>
+                        <p>Letra más común</p>
+                    </div>
+                    <div class="estadistica-item">
+                        <i class="fas fa-longest-word"></i>
+                        <span id="nombre-mas-largo">-</span>
+                        <p>Nombre más largo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="cerrarModal()">&times;</span>
+                <h2 id="modal-titulo">Información</h2>
+                <p id="modal-contenido"></p>
+            </div>
+        </div>
+
+        <script src="js/JavasMinisterios.js"></script>
+        <script src="js/lista-ministerios.js"></script>
+    </body>
+</html>

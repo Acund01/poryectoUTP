@@ -1,0 +1,138 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 1 jul 2025, 23:59:08
+    Author     : LENOVO
+*/
+.busqueda-container {
+    margin-top: 2rem;
+}
+
+.busqueda-input {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.busqueda-input input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.busqueda-input button {
+    background-color: #f7472a;
+    color: white;
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.busqueda-input button:hover {
+    background-color: #e63927;
+}
+
+.resultados-busqueda {
+    min-height: 300px;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.resultado-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.resultado-item:last-child {
+    border-bottom: none;
+}
+
+.resultado-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.resultado-item h3 {
+    margin: 0 0 0.5rem;
+    color: #0c1b33;
+}
+
+.resultado-item button {
+    background-color: #f7472a;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.resultado-item button:hover {
+    background-color: #e63927;
+}
+
+.busqueda-sugerencias {
+    margin-top: 2rem;
+}
+
+.busqueda-sugerencias h3 {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.sugerencias-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.sugerencias-tags span {
+    background-color: #eef1f7;
+    color: #0c1b33;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sugerencias-tags span:hover {
+    background-color: #d0d8e8;
+}
+
+@media (max-width: 768px) {
+    .busqueda-input {
+        flex-direction: column;
+    }
+    
+    .resultado-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .resultado-item button {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+    }
+}

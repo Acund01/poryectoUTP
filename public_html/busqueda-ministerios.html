@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Búsqueda de Ministerios del Perú</title>
+        <link rel="icon" href="imagenes/icono.png">
+        <link rel="stylesheet" href="css/EstilosMinisterios.css">
+        <link rel="stylesheet" href="css/busqueda-ministerios.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <div class="sidebar" id="sidebar">
+            <div class="toggle-btn" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="sidebar-header">
+                <img src="imagenes/escudo-del-peru.png" alt="Escudo del Perú" class="escudo-peru">
+                <h3>Gobierno del Perú</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="Ministerios.html"><i class="fas fa-home"></i><span>Inicio</span></a></li>
+                <li><a href="lista-ministerios.html"><i class="fas fa-landmark"></i><span>Ministerios</span></a></li>
+                <li><a href="contacto-ministerios.html"><i class="fas fa-envelope"></i><span>Contacto</span></a></li>
+                <li><a href="busqueda-ministerios.html" class="active"><i class="fas fa-search"></i><span>Búsqueda</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <button onclick="mostrarInfo()" class="info-btn"><i class="fas fa-info-circle"></i> Información</button>
+            </div>
+        </div>
+
+        <div class="contenido" id="contenido">
+            <h1>Búsqueda de Ministerios</h1>
+
+            <div class="busqueda-container">
+                <div class="busqueda-input">
+                    <input type="text" id="busqueda" placeholder="Ingrese el nombre del ministerio..." 
+                           onkeyup="if (event.key === 'Enter')
+                       buscarMinisterio()">
+                    <button onclick="buscarMinisterio()"><i class="fas fa-search"></i> Buscar</button>
+                </div>
+
+                <div class="resultados-busqueda" id="resultados-busqueda">
+                    <p>Ingresa un término de búsqueda para encontrar ministerios.</p>
+                </div>
+
+                <div class="busqueda-sugerencias">
+                    <h3>Sugerencias de búsqueda:</h3>
+                    <div class="sugerencias-tags">
+                        <span onclick="buscarSugerencia('salud')">Salud</span>
+                        <span onclick="buscarSugerencia('educación')">Educación</span>
+                        <span onclick="buscarSugerencia('economía')">Economía</span>
+                        <span onclick="buscarSugerencia('ambiente')">Ambiente</span>
+                        <span onclick="buscarSugerencia('defensa')">Defensa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="cerrarModal()">&times;</span>
+                <h2 id="modal-titulo">Información</h2>
+                <p id="modal-contenido"></p>
+            </div>
+        </div>
+
+        <script src="js/JavasMinisterios.js"></script>
+    </body>
+</html>

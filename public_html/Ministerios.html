@@ -5,13 +5,65 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 -->
 <html>
     <head>
-        <link rel="icon" href="imagenes/icono.png">
-        <title>Ministerios</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ministerios del Perú</title>
+        <link rel="icon" href="imagenes/icono.png">
+        <link rel="stylesheet" href="css/EstilosMinisterios.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
-    <frameset cols="25%,75%">
-        <frame src="Menu-ministerios.html">
-        <frame src="Contenido-ministerios.html" name="contenido">
-    </frameset>
+    <body>
+        <div class="sidebar" id="sidebar">
+            <div class="toggle-btn" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="sidebar-header">
+                <img src="imagenes/escudo-del-peru.png" alt="Escudo del Perú" class="escudo-peru">
+                <h3>Gobierno del Perú</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="Ministerios.html"><i class="fas fa-home"></i><span>Inicio</span></a></li>
+                <li><a href="lista-ministerios.html"><i class="fas fa-landmark"></i><span>Ministerios</span></a></li>
+                <li><a href="contacto-ministerios.html"><i class="fas fa-envelope"></i><span>Contacto</span></a></li>
+                <li><a href="busqueda-ministerios.html"><i class="fas fa-search"></i><span>Búsqueda</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <button onclick="mostrarInfo()" class="info-btn"><i class="fas fa-info-circle"></i> Información</button>
+            </div>
+        </div>
+
+        <div class="contenido" id="contenido">
+            <section class="intro">
+                <h1>Ministerios del Perú</h1>
+                <section class="galeria">
+                    <div class="imagen-ministerio">
+                        <img src="imagenes/congreso.jpg" alt="ministerios">
+                    </div>
+                </section>
+
+                <blockquote>
+                    “Un Estado eficiente empieza por sus instituciones sólidas y transparentes.”
+                </blockquote>
+
+                <h2>Funciones Generales</h2>
+                <p>Los ministerios en el Perú son entidades del Poder Ejecutivo encargadas de formular, coordinar y ejecutar políticas públicas en diversas áreas clave para el desarrollo del país. Cada ministerio tiene una función específica, como salud, educación, economía, defensa y transporte, entre otras. Su labor es garantizar el correcto funcionamiento del Estado, gestionar recursos públicos y velar por el bienestar de la población mediante la implementación de normativas, programas y proyectos que atiendan las necesidades nacionales.</p>
+                <p>Además, los ministerios trabajan en conjunto con otras instituciones del gobierno y del sector privado para promover el crecimiento económico, la inclusión social y el desarrollo sostenible. Supervisan y regulan diversas actividades, elaboran propuestas legislativas y buscan mejorar la eficiencia del aparato estatal. En tiempos de crisis, como desastres naturales o emergencias sanitarias, desempeñan un papel fundamental en la coordinación de respuestas rápidas y efectivas para proteger a los ciudadanos y mitigar impactos negativos.</p>
+
+                <h3>Dato Curioso</h3>
+                <p>¿Sabías que Perú tiene actualmente 18 ministerios, cada uno liderado por un ministro designado por el presidente?</p>
+                <p>Los ministerios en el Perú son organismos gubernamentales encargados de gestionar distintos sectores fundamentales para el desarrollo del país. Actualmente, existen 18 ministerios, entre ellos el Ministerio de Economía y Finanzas, el Ministerio de Educación, el Ministerio de Salud y el Ministerio del Interior. Cada ministerio es dirigido por un ministro, quien es designado por el presidente de la República y tiene la responsabilidad de formular políticas, ejecutar programas y supervisar el funcionamiento de su sector.</p>  
+            </section>
+        </div>
+
+        <!-- Ventana flotante -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="cerrarModal()">&times;</span>
+                <h2 id="modal-titulo">Información</h2>
+                <p id="modal-contenido"></p>
+            </div>
+        </div>
+
+        <script src="js/JavasMinisterios.js"></script>
+    </body>
 </html>

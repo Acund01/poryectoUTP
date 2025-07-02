@@ -1,48 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Comisaría Central</title>
-  <link rel="stylesheet" href="css/estilosComisaria.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Comisaría Central</title>
+        <link rel="stylesheet" href="css/estilosComisaria.css"/>
+    </head>
+    <body>
 
-<header>
-  <h1>Comisaría Central</h1>
-  <p>Servicio a la comunidad las 24/7</p>
-</header>
+        <header>
+            <h1>Comisaría Central</h1>
+            <p>Protegiendo y sirviendo a la comunidad 24/7</p>
+        </header>
 
-<nav>
-  <a href="#inicio">Inicio</a>
-  <a href="#ubicacion">Ubicación</a>
-  <a href="#contacto">Contacto</a>
-</nav>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#ubicacion">Ubicación</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
 
-<div id="Contenedor">
-  <section id="inicio">
-    <h2>Bienvenidos</h2>
-    <p>En esta página encontrará información sobre nuestras comisarías, servicios y cómo contactarnos en caso de emergencia.</p>
-  </section>
+        <div id="Contenedor">
+            <section id="eventos" class="animado">
+                <h2>Próximos Eventos Comunitarios</h2>
+                <div class="carrusel">
+                    <div class="carrusel-item activo">
+                        <img src="imagenes/evento2Comisaria.jpeg" alt="Charla de prevención">
+                        <h3>Charla de Prevención del Delito</h3>
+                        <p>Aprende técnicas de prevención junto con especialistas. Fecha: 10 de Julio</p>
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="imagenes/evento3Comisaria.jpg" alt="Campaña de limpieza">
+                        <h3>Campaña de Limpieza Vecinal</h3>
+                        <p>Unamos fuerzas por un barrio limpio y seguro. Fecha: 15 de Julio</p>
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="imagenes/eventoComisaria.jpg" alt="Jornada con niños">
+                        <h3>Jornada Educativa para Niños</h3>
+                        <p>Actividades para enseñar civismo y seguridad a los más pequeños. Fecha: 20 de Julio</p>
+                    </div>
+                </div>
+                <div class="carrusel-controles">
+                    <button id="prevBtn">⭠</button>
+                    <button id="nextBtn">⭢</button>
+                </div>
+            </section>
 
-  <section id="ubicacion">
-    <h2>¿Dónde estamos?</h2>
-    <p>Encuentra la comisaría más cercana:</p>
-    <a href="https://aplicaciones.mininter.gob.pe/ubicatucomisaria/"><input type="button" value="Ubicar Comisaria"></a>
-    <br><br><br>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1356.7624977284129!2d-71.53750425700852!3d-16.400877533386797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a577d0b665d%3A0x66c2b02c2addaa7e!2sPNP%20Palacio%20Viejo!5e0!3m2!1ses-419!2spe!4v1745421615560!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
+            <section id="inicio" class="animado">
+                <h2>Bienvenidos</h2>
+                <p>Accede a información clave sobre nuestras comisarías, servicios, y formas de contactarnos en caso de emergencia.</p>
+                <p>Trabajamos con compromiso, responsabilidad y cercanía para tu seguridad.</p>
+            </section>
 
-  <section id="contacto">
-    <h2>Contacto y Emergencias</h2>
-    <p>📞 Emergencias: 911</p>
-    <p>📧 Email: contacto@comisaria.gob</p>
-  </section>
-</div>
+            <section id="ubicacion" class="animado">
+                <h2>¿Dónde estamos?</h2>
+                <p>Encuentra la comisaría más cercana en segundos:</p>
+                <button id="btnUbicar">Ubicar Comisaría</button>
+                <br><br>
+                <iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen loading="lazy"></iframe>
+            </section>
 
-<footer>
-  <p> © 2025 Comisaría Central -  Todos los derechos reservados.</p>
-</footer>
+            <section id="contacto" class="animado">
+                <h2>Contacto y Emergencias</h2>
+                <p><strong>📞 Emergencias:</strong> 911</p>
+                <p><strong>📧 Email:</strong> contacto@comisaria.gob</p>
+                <p><strong>🏢 Dirección:</strong> Av. Central 123, Ciudad Segura</p>
+                <p><strong>⏰ Horarios de atención:</strong> Lunes a Domingo - 24 horas</p>
+            </section>
+        </div>
 
-</body>
+        <footer>
+            <p>© 2025 Comisaría Central - Todos los derechos reservados.</p>
+        </footer>
+
+        <script src="js/comisaria.js"></script>
+    </body>
 </html>

@@ -1,32 +1,28 @@
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/javascript.js to edit this template
- */
-// Esperar a que el DOM esté completamente cargado
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
+    // ============================
+    // Datos simulados
+    // ============================
     const tramitesPopulares = [
-        {nombre: "Renovación de Pasaporte", url: "#"},
-        {nombre: "Prórroga de Estancia", url: "#"},
-        {nombre: "Carné de Extranjería", url: "#"},
-        {nombre: "Legalización de Documentos", url: "#"}
+        { nombre: "Renovación de Pasaporte", url: "#" },
+        { nombre: "Prórroga de Estancia", url: "#" },
+        { nombre: "Carné de Extranjería", url: "#" },
+        { nombre: "Legalización de Documentos", url: "#" }
     ];
 
     const noticiasRecientes = [
-        {titulo: "Nuevos horarios de atención", fecha: "15/06/2025", resumen: "A partir del 1 de julio cambian los horarios en todas las oficinas."},
-        {titulo: "Proceso simplificado para visas", fecha: "10/06/2025", resumen: "Se implementa nuevo sistema para agilizar trámites de visa."},
-        {titulo: "Cierre temporal por mantenimiento", fecha: "05/06/2025", resumen: "Las oficinas de Lima Centro cerrarán del 20 al 22 de junio."}
+        { titulo: "Nuevos horarios de atención", fecha: "15/06/2025", resumen: "A partir del 1 de julio cambian los horarios en todas las oficinas." },
+        { titulo: "Proceso simplificado para visas", fecha: "10/06/2025", resumen: "Se implementa nuevo sistema para agilizar trámites de visa." },
+        { titulo: "Cierre temporal por mantenimiento", fecha: "05/06/2025", resumen: "Las oficinas de Lima Centro cerrarán del 20 al 22 de junio." }
     ];
 
-    // Funciones para manipular el DOM
+    // ============================
+    // UI: Trámites populares
+    // ============================
     function cargarTramitesPopulares() {
         const listaTramites = document.getElementById('tramitesLista');
-
-        // Verificar si el elemento existe
-        if (!listaTramites)
-            return;
+        if (!listaTramites) return;
 
         listaTramites.innerHTML = '';
-
         tramitesPopulares.forEach(tramite => {
             const li = document.createElement('li');
             const a = document.createElement('a');
@@ -37,15 +33,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // ============================
+    // UI: Noticias recientes
+    // ============================
     function cargarNoticiasRecientes() {
         const noticiasContainer = document.getElementById('noticiasContainer');
-
-        // Verificar si el elemento existe
-        if (!noticiasContainer)
-            return;
+        if (!noticiasContainer) return;
 
         noticiasContainer.innerHTML = '';
-
         noticiasRecientes.forEach(noticia => {
             const div = document.createElement('div');
             div.className = 'noticia';
@@ -60,52 +55,52 @@ document.addEventListener('DOMContentLoaded', function () {
             const p = document.createElement('p');
             p.textContent = noticia.resumen;
 
-            div.appendChild(h4);
-            div.appendChild(span);
-            div.appendChild(p);
+            div.append(h4, span, p);
             noticiasContainer.appendChild(div);
         });
     }
 
+    // ============================
+    // UI: Menú responsive (hamburguesa)
+    // ============================
     function setupMenuResponsive() {
         const menuToggle = document.querySelector('.menu-toggle');
         const menu = document.querySelector('.menu ul');
 
-        // Verificar si los elementos existen
-        if (!menuToggle || !menu)
-            return;
+        if (!menuToggle || !menu) return;
 
-        menuToggle.addEventListener('click', function () {
+        menuToggle.addEventListener('click', () => {
             menu.classList.toggle('show');
         });
     }
 
+    // ============================
+    // Modal: Calculadora de Multas
+    // ============================
     function setupCalculadoraMultas() {
         const modal = document.getElementById('calculadoraModal');
         const btn = document.getElementById('calculadoraBtn');
         const span = document.querySelector('.close');
         const form = document.getElementById('calculadoraForm');
 
-        // Verificar si los elementos existen
-        if (!modal || !btn || !span || !form)
-            return;
+        if (!modal || !btn || !span || !form) return;
 
-        btn.addEventListener('click', function (e) {
+        btn.addEventListener('click', (e) => {
             e.preventDefault();
             modal.style.display = 'block';
         });
 
-        span.addEventListener('click', function () {
+        span.addEventListener('click', () => {
             modal.style.display = 'none';
         });
 
-        window.addEventListener('click', function (event) {
-            if (event.target === modal) {
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
                 modal.style.display = 'none';
             }
         });
 
-        form.addEventListener('submit', function (e) {
+        form.addEventListener('submit', (e) => {
             e.preventDefault();
             calcularMulta();
         });
@@ -116,20 +111,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const diasRetrasoInput = document.getElementById('diasRetraso');
         const resultadoDiv = document.getElementById('resultadoCalculadora');
 
-        // Verificar si los elementos existen
-        if (!tipoInfraccionSelect || !diasRetrasoInput || !resultadoDiv)
-            return;
+        if (!tipoInfraccionSelect || !diasRetrasoInput || !resultadoDiv) return;
 
         const tipoInfraccion = tipoInfraccionSelect.value;
         const diasRetraso = parseInt(diasRetrasoInput.value);
         let multa = 0;
 
-        // Validación de campos
         if (!tipoInfraccion || isNaN(diasRetraso)) {
             alert('Por favor complete todos los campos correctamente.');
             return;
         }
-
 
         switch (tipoInfraccion) {
             case 'sobreestadia':
@@ -139,13 +130,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 multa = diasRetraso * 15;
                 break;
             case 'trabajo':
-                multa = diasRetraso * 20 + 100; // Multa base + por día
+                multa = diasRetraso * 20 + 100;
                 break;
             default:
                 multa = 0;
         }
 
-        // Mostrar resultado
         resultadoDiv.innerHTML = `
             <h3>Resultado del cálculo:</h3>
             <p><strong>Tipo de infracción:</strong> ${tipoInfraccionSelect.options[tipoInfraccionSelect.selectedIndex].text}</p>
@@ -156,14 +146,14 @@ document.addEventListener('DOMContentLoaded', function () {
         resultadoDiv.style.display = 'block';
     }
 
+    // ============================
+    // Botón: Redirección a formulario
+    // ============================
     function setupFormularioBtn() {
         const formularioBtn = document.getElementById('formularioBtn');
+        if (!formularioBtn) return;
 
-        // Verificar si el elemento existe
-        if (!formularioBtn)
-            return;
-
-        formularioBtn.addEventListener('click', function (e) {
+        formularioBtn.addEventListener('click', (e) => {
             e.preventDefault();
             const confirmar = confirm('¿Deseas ir al formulario de contacto?');
             if (confirmar) {
@@ -172,7 +162,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Inicialización
+    // ============================
+    // Inicializador principal
+    // ============================
     function init() {
         cargarTramitesPopulares();
         cargarNoticiasRecientes();
@@ -187,4 +179,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
     init();
 });
-

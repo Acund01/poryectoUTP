@@ -1,9 +1,25 @@
-
-document.getElementById('menu-toggle').addEventListener('click', () => {
-  document.getElementById('side-nav').classList.toggle('show');
+document.addEventListener('DOMContentLoaded', () => {
+  initMenuToggle();
+  renderColegios();
 });
 
-// Lista de colegios
+// ==============================
+// Función para alternar el menú lateral
+// ==============================
+function initMenuToggle() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const sideNav = document.getElementById('side-nav');
+
+  if (menuToggle && sideNav) {
+    menuToggle.addEventListener('click', () => {
+      sideNav.classList.toggle('show');
+    });
+  }
+}
+
+// ==============================
+// Datos de los colegios profesionales
+// ==============================
 const colegios = [
   { nombre: "Abogados", img: "logos-colegios/abogados-200x80.jpg", url: "https://www.judecap.org.pe/" },
   { nombre: "Administración", img: "logos-colegios/administracion2-200x80.jpg", url: "https://www.cladperu.org/" },
@@ -42,18 +58,33 @@ const colegios = [
   { nombre: "Médicos Veterinarios", img: "logos-colegios/medico-veterinario-200x80.jpg", url: "https://www.cmvp.org.pe/" },
 ];
 
+// ==============================
+// Renderizar tarjetas de colegios
+// ==============================
+function renderColegios() {
+  const container = document.getElementById('card-colegios');
+  if (!container) return;
 
-const container = document.getElementById('card-colegios');
+  colegios.forEach(({ nombre, img, url }) => {
+    const card = document.createElement('div');
+    card.classList.add('card');
 
-colegios.forEach(({ nombre, img, url }) => {
-  const card = document.createElement('div');
-  card.classList.add('card');
+    const logo = document.createElement('img');
+    logo.src = img;
+    logo.alt = nombre;
 
-  card.innerHTML = `
-    <img src="${img}" alt="${nombre}" />
-    <span>${nombre}</span>
-    <button onclick="window.open('${url}', '_blank')">Visitar</button>
-  `;
+    const title = document.createElement('span');
+    title.textContent = nombre;
 
-  container.appendChild(card);
-});
+    const button = document.createElement('button');
+    button.textContent = 'Visitar';
+    button.addEventListener('click', () => {
+      window.open(url, '_blank');
+    });
+
+    card.appendChild(logo);
+    card.appendChild(title);
+    card.appendChild(button);
+    container.appendChild(card);
+  });
+}

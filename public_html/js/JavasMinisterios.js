@@ -1,7 +1,6 @@
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/javascript.js to edit this template
- */
+// ===========================
+// Datos: Ministerios del Perú
+// ===========================
 const ministerios = [
     { nombre: "Desarrollo Agrario y Riego", url: "https://www.gob.pe/midagri", imagen: "imagenes/midagri.jpg" },
     { nombre: "Ambiente", url: "https://www.gob.pe/minam", imagen: "imagenes/minam.png" },
@@ -23,32 +22,15 @@ const ministerios = [
     { nombre: "Desarrollo e Inclusión Social", url: "https://www.gob.pe/midis", imagen: "imagenes/midis.png" }
 ];
 
-document.addEventListener('DOMContentLoaded', function() {
-    if (document.querySelector('.cards')) {
-        cargarMinisterios();
-    }
-    
-    const yearElement = document.getElementById('current-year');
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-    }
-});
-
-function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    const contenido = document.getElementById('contenido');
-    sidebar.classList.toggle('collapsed');
-    
-    const isCollapsed = sidebar.classList.contains('collapsed');
-    localStorage.setItem('sidebarCollapsed', isCollapsed);
-}
-
+// ===========================
+// Función: Cargar tarjetas de ministerios
+// ===========================
 function cargarMinisterios() {
     const cardsContainer = document.querySelector('.cards');
     if (!cardsContainer) return;
-    
+
     cardsContainer.innerHTML = '';
-    
+
     ministerios.forEach(ministerio => {
         const card = document.createElement('div');
         card.className = 'card';
@@ -63,11 +45,48 @@ function cargarMinisterios() {
     });
 }
 
+// ===========================
+// Función: Mostrar año actual en footer
+// ===========================
+function mostrarAnioActual() {
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+}
+
+// ===========================
+// Función: Alternar menú lateral
+// ===========================
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    if (!sidebar) return;
+
+    sidebar.classList.toggle('collapsed');
+    localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
+}
+
+// ===========================
+// Función: Restaurar estado del sidebar desde localStorage
+// ===========================
+function restaurarSidebar() {
+    const sidebarCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+    const sidebar = document.getElementById('sidebar');
+    if (sidebarCollapsed && sidebar) {
+        sidebar.classList.add('collapsed');
+    }
+}
+
+// ===========================
+// Función: Mostrar ventana modal con información
+// ===========================
 function mostrarInfo() {
     const modal = document.getElementById('modal');
     const modalTitulo = document.getElementById('modal-titulo');
     const modalContenido = document.getElementById('modal-contenido');
-    
+
+    if (!modal || !modalTitulo || !modalContenido) return;
+
     modalTitulo.textContent = 'Acerca de este sitio';
     modalContenido.innerHTML = `
         <p>Este sitio web muestra información sobre los 18 ministerios del Perú.</p>
@@ -80,63 +99,55 @@ function mostrarInfo() {
         </ul>
         <p><strong>Total de ministerios:</strong> ${ministerios.length}</p>
     `;
-    
+
     modal.style.display = 'block';
 }
 
+// ===========================
+// Función: Cerrar modal
+// ===========================
 function cerrarModal() {
-    document.getElementById('modal').style.display = 'none';
+    const modal = document.getElementById('modal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
 }
 
-window.addEventListener('click', function(event) {
+// ===========================
+// Evento: Cierre modal al hacer clic fuera
+// ===========================
+window.addEventListener('click', (event) => {
     const modal = document.getElementById('modal');
     if (event.target === modal) {
         modal.style.display = 'none';
     }
 });
 
-window.addEventListener('load', function() {
-    const sidebarCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
-    if (sidebarCollapsed) {
-        document.getElementById('sidebar').classList.add('collapsed');
-    }
-});
-
+// ===========================
+// Función: Buscar ministerio por nombre
+// ===========================
 function buscarMinisterio() {
-    console.log("Función buscarMinisterio() ejecutada"); // Para depuración
-    
-    const termino = document.getElementById('busqueda').value.toLowerCase();
-    console.log("Término de búsqueda:", termino); // Para depuración
-    
+    const termino = document.getElementById('busqueda')?.value.toLowerCase();
     const resultadosContainer = document.getElementById('resultados-busqueda');
-    if (!resultadosContainer) {
-        console.error("No se encontró el contenedor de resultados"); // Para depuración
-        return;
-    }
-    
+
+    if (!resultadosContainer) return;
+
+    resultadosContainer.innerHTML = '';
+
     if (!termino) {
         resultadosContainer.innerHTML = '<p>Por favor ingrese un término de búsqueda.</p>';
         return;
     }
-    
-    console.log("Ministerios disponibles:", ministerios); // Para depuración
-    
-    const resultados = ministerios.filter(ministerio => {
-        const nombreMinistro = ministerio.nombre.toLowerCase();
-        const coincide = nombreMinistro.includes(termino);
-        console.log(`Comparando: "${nombreMinistro}" con "${termino}" -> ${coincide}`); // Para depuración
-        return coincide;
-    });
-    
-    console.log("Resultados encontrados:", resultados); // Para depuración
-    
-    resultadosContainer.innerHTML = '';
-    
+
+    const resultados = ministerios.filter(ministerio =>
+        ministerio.nombre.toLowerCase().includes(termino)
+    );
+
     if (resultados.length === 0) {
         resultadosContainer.innerHTML = '<p>No se encontraron ministerios que coincidan con tu búsqueda.</p>';
         return;
     }
-    
+
     resultados.forEach(ministerio => {
         const elemento = document.createElement('div');
         elemento.className = 'resultado-item';
@@ -150,3 +161,15 @@ function buscarMinisterio() {
         resultadosContainer.appendChild(elemento);
     });
 }
+
+// ===========================
+// Inicialización al cargar el DOM
+// ===========================
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.cards')) {
+        cargarMinisterios();
+    }
+
+    mostrarAnioActual();
+    restaurarSidebar();
+});
